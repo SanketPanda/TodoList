@@ -1,0 +1,13 @@
+<div class="row" style="--bs-gutter-x:0;">
+  <div class="col-md-12">
+    <mat-toolbar color="primary">
+      <span>To Do App</span>
+    </mat-toolbar>
+  </div>
+  <div class="col-md-12 mt-5">
+    <app-to-do [formValues]="formValues" (onTaskAdd)="addTasks($event)" (onTaskUpdate)="updateTask($event)" (onTaskCancel)="cancelTask($event)" ></app-to-do>
+  </div>
+  <div class="col-md-12 mt-5">
+    <app-to-do-details [newTask]="newTask" [updatedTask]="updatedTask" (onTaskEdit)="editTask($event)"></app-to-do-details>
+  </div>
+</div>
