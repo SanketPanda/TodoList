@@ -18,6 +18,7 @@ import { ToDoComponent } from './component/to-do/to-do-details/to-do.component';
 import { ToDoDetailsComponent } from './component/to-do/to-do-details.component';
 import { PopUpComponent } from './component/pop-up/pop-up.component';
 import {DialogModule} from '@angular/cdk/dialog';
+import { FieldErrorComponent } from './component/field-error/field-error.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {DialogModule} from '@angular/cdk/dialog';
     DashboardComponent,
     ToDoComponent,
     ToDoDetailsComponent,
-    PopUpComponent
+    PopUpComponent,
+    FieldErrorComponent
   ],
   imports: [
     BrowserModule,

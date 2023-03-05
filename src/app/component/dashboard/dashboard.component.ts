@@ -6,35 +6,39 @@ import { ToDoComponent } from '../to-do/to-do-details/to-do.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  newTask!: any;
+  formValues!: any;
+  updatedTask!: any;
 
-   newTask!: Task;
-   formValues!: Task;
-   updatedTask!: Task;
+  currentYear = new Date().getFullYear();
 
-  constructor(
-    ){}
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-  public addTasks($event: any){
+  public addTasks($event: any) {
+    this.updatedTask = null;
     this.newTask = $event as Task;
   }
 
-  public editTask(task: any){
-     this.formValues = task;
+  public editTask(task: any) {
+    this.newTask = null;
+    this.updatedTask = null;
+    this.formValues = task;
   }
 
-  public updateTask($event: any){
-     this.updatedTask = $event;
-     this.formValues = new Task('','','');
+  public updateTask($event: any) {
+    this.formValues = null;
+    this.newTask = null;
+    this.updatedTask = $event;
   }
 
-  public cancelTask($event: any){
-    this.formValues = $event;
+  public cancelTask($event: any) {
+    this.formValues = null;
+    this.newTask = null;
+    this.updatedTask = null;
   }
 }

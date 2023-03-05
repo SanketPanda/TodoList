@@ -1,4 +1,3 @@
-
 <div class="row" style="--bs-gutter-x:0;">
   <div class="col-md-12">
     <div class="container">
@@ -12,23 +11,14 @@
               <div class="row">
                 <div class="col">
                   <label for="title"><b>Title</b></label>
-                  <input type="text" name="id" id="id" class="form-control"
-                     formControlName="id" ngDefaultControl hidden>
+                  <input type="text" name="id" id="id" class="form-control" formControlName="id" ngDefaultControl
+                    hidden>
                   <input type="text" placeholder="Enter title" name="title" id="title" class="form-control"
-                     formControlName="title" required ngDefaultControl>
-                  <div
-                    *ngIf="form.controls['title'] && form.controls['title'].invalid && (form.controls['title'].dirty || form.controls['title'].touched)"
-                    class="alert alert-danger">
-                    <div *ngIf="form.controls['title'].errors?.['required']">
-                      Title is required.
-                    </div>
-                    <div *ngIf="form.controls['title'].errors?.['minlength']">
-                      Title must be at least 3 characters long.
-                    </div>
-                    <div *ngIf="form.controls['title'].errors?.['maxlength']">
-                      Title can not exceed 100 characters long.
-                    </div>
-                  </div>
+                    formControlName="title" required ngDefaultControl>
+                    <app-field-error
+                    [displayError]="isFieldValid('title')"
+                    [errorMsg]="getErrorMessage('title')">
+                  </app-field-error>
                 </div>
               </div>
               <div class="row">
@@ -37,26 +27,20 @@
                     <label for="description"><b>Description</b></label>
                     <textarea placeholder="Enter Description" name="description" id="description" rows="2" cols="50"
                       formControlName="description" ngDefaultControl></textarea>
-                    <div
-                      *ngIf="form.controls['description'] && form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)"
-                      class="alert alert-danger">
-                      <div *ngIf="form.controls['description'].errors?.['required']">
-                        Description is required.
-                      </div>
-                      <div *ngIf="form.controls['description'].errors?.['minlength']">
-                        Description must be at least 100 characters long.
-                      </div>
-                      <div *ngIf="form.controls['description'].errors?.['maxlength']">
-                        Description can not exceed 155 characters long.
-                      </div>
-                    </div>
+                      <app-field-error
+                    [displayError]="isFieldValid('description')"
+                    [errorMsg]="getErrorMessage('description')">
+                  </app-field-error>
                   </div>
                 </div>
               </div>
               <div mat-dialog-actions align="end">
-                <button mat-raised-button (click)="onCancel()" color="accent" style="margin-right:2rem" *ngIf="btnTitle != 'Submit'">Cancel</button>
-                <button mat-raised-button (click)="onUpdate(form)" color="primary" style="margin-right:2rem" *ngIf="btnTitle != 'Submit'">Update</button>
-                <button mat-raised-button (click)="addNewTask(form)" color="primary" type="submit" [disabled]="!form.valid" *ngIf="btnTitle == 'Submit'">{{btnTitle}}</button>
+                <button mat-raised-button (click)="onCancel()" color="accent" style="margin-right:2rem"
+                  *ngIf="btnTitle != 'Submit'">Cancel</button>
+                <button mat-raised-button (click)="onUpdate(form)" color="primary" style="margin-right:2rem"
+                  *ngIf="btnTitle != 'Submit'">Update</button>
+                <button mat-raised-button (click)="addNewTask(form)" color="primary" type="submit"
+                  *ngIf="btnTitle == 'Submit'">{{btnTitle}}</button>
               </div>
             </form>
           </div>
