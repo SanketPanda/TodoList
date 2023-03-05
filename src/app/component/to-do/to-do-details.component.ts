@@ -49,7 +49,7 @@ export class ToDoDetailsComponent implements OnChanges {
       new Task('2', 'Hosting Angular App', 'Host the todo app in amazon aws'),
     ]),
     new Column('TODO', []),
-    new Column('INPROGRESS', []),
+    new Column('IN PROGRESS', []),
     new Column('DONE', []),
   ]);
 
