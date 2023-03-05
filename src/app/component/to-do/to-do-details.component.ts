@@ -44,12 +44,12 @@ export class ToDoDetailsComponent implements OnChanges {
   }
 
   public toDoBoard: TodoBoard = new TodoBoard('Todo Board', [
-    new Column('IDEAS', [
+    new Column('BACKLOG', [
       new Task('1', 'ToDO App', 'Create a to do app using Angular'),
       new Task('2', 'Hosting Angular App', 'Host the todo app in amazon aws'),
     ]),
-    new Column('RESEARCH', []),
     new Column('TODO', []),
+    new Column('INPROGRESS', []),
     new Column('DONE', []),
   ]);
 
